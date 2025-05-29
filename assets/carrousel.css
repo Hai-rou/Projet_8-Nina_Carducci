@@ -1,0 +1,66 @@
+#carousel {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+  min-width: 100%;
+  display: none;
+  height: 500px; /* <- Fixe la hauteur à 500px (modifiable selon ton besoin) */
+  position: relative;
+}
+
+.carousel-item.active {
+  display: block;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Couvre tout sans déformer */
+  display: block;
+}
+
+
+.carousel-controls button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  color: white;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 40px;
+}
+
+#prev { left: 10px; }
+#next { right: 10px; }
+
+.carousel-indicators {
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    margin-top: -40px;
+}
+
+.carousel-indicators span {
+  display: inline-block;
+  width: 30px;
+  height: 3px;
+  background: gray;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.carousel-indicators .active {
+  background: white;
+}
