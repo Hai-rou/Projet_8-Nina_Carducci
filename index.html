@@ -18,8 +18,6 @@
 		<meta charset="UTF-8">
 		<title>Nina Carducci photographie la lumière, la vie et l’instant</title>
 		<meta name="description" content="Offrez à vos souvenirs la lumière qu’ils méritent. Photographe de mariages, portraits et événements, avec une touche artistique et l’œil pour saisir l’émotion juste.">
-		<script src="./assets/js/maugallery.min.js" defer></script>
-		<script src="./assets/js/carrousel.min.js" defer></script>
 		<script type="application/ld+json">
 		{
 		  "@context": "https://schema.org",
@@ -218,6 +216,25 @@
 				</div>
 			</div>
 		</footer>
+		<script>
+			const carouselObserver = new IntersectionObserver((entries, observer) => {
+				entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					const script = document.createElement('script');
+					script.src = './assets/js/carrousel.min.js';
+					document.body.appendChild(script);
+					observer.unobserve(entry.target); // Charger une seule fois
+				}
+				});
+			}, {
+				rootMargin: "0px 0px 300px 0px" // Charge un peu avant qu'il entre dans l'écran
+			});
 
+			const carousel = document.querySelector('#carousel');
+			if (carousel) {
+				carouselObserver.observe(carousel);
+			}
+		</script>
+		<script src="./assets/js/carrousel.min.js"></script>
 	</body>
 </html>
