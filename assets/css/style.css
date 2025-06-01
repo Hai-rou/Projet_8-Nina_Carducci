@@ -4,7 +4,7 @@
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
-  src: url('../assets/fonts/inter/inter-v18-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('../fonts/inter/inter-v18-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* spectral-regular - latin */
 @font-face {
@@ -12,7 +12,7 @@
   font-family: 'Spectral';
   font-style: normal;
   font-weight: 400;
-  src: url('../assets/fonts/spectral/spectral-v14-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('../fonts/spectral/spectral-v14-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 body {
@@ -107,10 +107,6 @@ body {
 	font-size: 14px;
 }
 
-/**ici***/
-
-
-/***la**/
 .quote {
 	font-family: 'Spectral';
 	font-style: italic;
