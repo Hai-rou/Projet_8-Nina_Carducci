@@ -16,6 +16,16 @@
 		<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
 		<link rel="manifest" href="favicon/site.webmanifest">
 
+		<!-- Balises Open Graph Facebook -->
+		<meta property="og:title" content="Nina Carducci - Photographe professionnelle à Bordeaux" />
+		<meta property="og:description" content="Découvrez les portraits, mariages et événements capturés par Nina Carducci, photographe passionnée à Bordeaux." />
+		<meta property="og:image" content="https://hai-rou.github.io/Projet_8-Nina_Carducci/assets/images/camera.webp" />
+		<meta property="og:url" content="https://hai-rou.github.io/Projet_8-Nina_Carducci/" />
+		<meta property="og:type" content="website" />
+		<meta property="og:locale" content="fr_FR" />
+		<meta property="og:site_name" content="Nina Carducci" />
+
+
 
 		<meta charset="UTF-8">
 		<title>Nina Carducci photographie la lumière, la vie et l’instant</title>
@@ -218,25 +228,35 @@
 				</div>
 			</div>
 		</footer>
+		
 		<script>
 			const carouselObserver = new IntersectionObserver((entries, observer) => {
 				entries.forEach(entry => {
-				if (entry.isIntersecting) {
-					const script = document.createElement('script');
-					script.src = './assets/js/carrousel.min.js';
-					document.body.appendChild(script);
-					observer.unobserve(entry.target); // Charger une seule fois
-				}
-				});
-			}, {
-				rootMargin: "0px 0px 300px 0px" // Charge un peu avant qu'il entre dans l'écran
-			});
+						if (entry.isIntersecting) {
+						const script = document.createElement('script');
+						script.src = "./assets/js/carrousel.min.js";
 
-			const carousel = document.querySelector('#carousel');
-			if (carousel) {
-				carouselObserver.observe(carousel);
-			}
+						// Important : attendre que le script soit chargé AVANT de faire quoi que ce soit
+						script.onload = () => {
+							console.log("Carrousel script chargé !");
+							// Tu peux lancer une fonction ici si nécessaire
+						};
+
+						document.body.appendChild(script);
+						observer.unobserve(entry.target); // Ne pas recharger plusieurs fois
+						}
+					});
+					}, {
+					rootMargin: "0px 0px 300px 0px"
+					});
+
+					const carousel = document.querySelector('#carousel');
+					if (carousel) {
+					carouselObserver.observe(carousel);
+				}
+
 		</script>
+
 		<script src="./assets/js/maugallery.min.js"></script>
 	</body>
 </html>
