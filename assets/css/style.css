@@ -17,7 +17,8 @@
 
 body {
 	max-width: 1920px;
-	margin: auto;
+	margin: 0;
+	padding: 0;
 }
 * {
 	font-family: 'Inter';
@@ -27,7 +28,7 @@ body {
 	background-color: white;
 	position: sticky;
 	top:0;
-	z-index: 1000;
+	z-index: 900;
 	display: flex;
 	justify-content: space-between;
 	padding-inline: 100px;
